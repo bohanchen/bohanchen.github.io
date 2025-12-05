@@ -6,42 +6,53 @@
     <title>Bohan Chen — Senior UX/UI Designer</title>
     <link rel="stylesheet" href="CSS/styles.css" />
     <!-- Google Fonts: Work Sans -->
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
-      <div class="logo">Bohan Chen</div>
+      <div class="header-container">
+        <div class="logo">Bohan Chen</div>
 
-      <nav id="nav-menu">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </nav>
+        <nav id="nav-menu">
+            <button id="nav-close" aria-label="Close menu">×</button>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+        </nav>
 
-      <button id="nav-toggle" aria-label="Toggle menu">☰</button>
+        <button id="nav-toggle">☰</button>
+      </div>
     </header>
 
+
+
     <!-- About Me -->
-    <section id="about" class="section about-section">
+    <section id="about" class="about-section">
       <div class="about-container">
         <!-- Text content -->
         <div class="about-text">
           <h2>Hello, I am Bohan Chen</h2>
           <p class="large-text">
-            I specialize in transforming complex workflows into simple, elegant
-            digital experiences. My work blends user research, interaction
-            design, visual systems, and high-fidelity prototyping.
+            I am a passionate UX/UI designer with 8+ years of experience creating seamless 
+            digital experiences. In the past, I worked for Charter Communications, IBM and IBM Research, 
+            and taught design studies at Parsons School of Design. I blend creativity with user-centric 
+            design principles to deliver products that not only look stunning but also function flawlessly. 
+            From user research and wireframing to prototyping and usability testing, I thrive on tackling 
+            challenges and turning complex problems into elegant solutions.
           </p>
-           <!-- Button -->
-          <a href="#projects" class="hero-btn">View My Work</a>
+          <!-- Button -->
+          <a href="#projects" class="hero-btn">
+            View My Work
+            <span class="btn-icon">➔</span>
+          </a>
         </div>
         <!-- Profile image -->
         <div class="about-image">
           <img
-            src="https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?q=80&w=882&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Bohan Chen Profile"
           />
         </div>
@@ -101,46 +112,81 @@
             </p>
           </div>
         </div>
+         <!-- Project 4 -->
+        <div class="project-card">
+          <img
+            src="https://images.unsplash.com/photo-1698376621013-c22a62d865b7?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Project Three"
+            class="project-image"
+          />
+          <div class="project-content">
+            <h3>Design System & Component Library</h3>
+            <p>
+              Built a reusable design system to ensure brand consistency and
+              faster development cycles.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section">
-      <h2>Skills</h2>
-      <ul class="skills-grid">
-        <li>User Research</li>
-        <li>Wireframing</li>
-        <li>Prototyping</li>
-        <li>Interaction Design</li>
-        <li>UI Design</li>
-        <li>Design Systems</li>
-        <li>Usability Testing</li>
-        <li>Figma</li>
-        <li>Adobe CC</li>
-        <li>Sketch</li>
-      </ul>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" class="section">
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section experience-section">
       <h2>Experience</h2>
-      <ul class="experience-list">
-        <li>
-          <strong>Senior UX/UI Designer — ITG</strong> (Stone Mountain, GA &
-          Fairfield, CT)
-        </li>
-        <li><strong>Lead Product Designer — SaaS Startup</strong></li>
-        <li><strong>UX Designer — Digital Agency</strong></li>
-      </ul>
-    </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section contact">
-      <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:youremail@example.com">youremail@example.com</a>
-      </p>
-    </section>
+      <div class="experience-item">
+        <h3 class="job-title">Senior UX/UI Designer</h3>
+        <div class="job-meta">
+          <span class="company">ITG</span>
+          <span class="year">2018–2024</span>
+        </div>
+        <p class="job-location">Stone Mountain, GA & Fairfield, CT</p>
+      </div>
+
+      <div class="experience-item">
+        <h3 class="job-title">Lead Product Designer</h3>
+        <div class="job-meta">
+          <span class="company">SaaS Startup</span>
+          <span class="year">2016–2018</span>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <h3 class="job-title">UX Designer</h3>
+        <div class="job-meta">
+          <span class="company">Digital Agency</span>
+          <span class="year">2013–2016</span>
+        </div>
+      </div>
+    </section>    
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p>&copy; 2025 Bohan Chen. All rights reserved.</p>
+        <div class="footer-socials">
+          <a
+            href="https://www.linkedin.com/in/yourprofile"
+            target="_blank"
+            aria-label="LinkedIn"
+            >LinkedIn</a
+          >
+          <a
+            href="https://www.behance.net/yourprofile"
+            target="_blank"
+            aria-label="Behance"
+            >Behance</a
+          >
+          <a
+            href="https://dribbble.com/yourprofile"
+            target="_blank"
+            aria-label="Dribbble"
+            >Dribbble</a
+          >
+          <a href="mailto:youremail@example.com" aria-label="Email">Email</a>
+        </div>
+      </div>
+    </footer>
 
     <!-- Javascript -->
     <script src="JS/main.js"></script>

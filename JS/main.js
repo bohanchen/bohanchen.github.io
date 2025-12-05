@@ -42,3 +42,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 function easeInOutCubic(t) {
     return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3)/2;
 }
+
+const navClose = document.getElementById("nav-close");
+
+if (navClose) {
+    navClose.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+    });
+}
+

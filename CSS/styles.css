@@ -34,76 +34,175 @@ p, li, a, span {
 
 
 /* HEADER */
+/* Glass Header */
 header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: saturate(180%) blur(10px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 32px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
+/* Max-width container */
+.header-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 32px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav {
-  display: flex;
-  gap: 24px;
+/* Logo */
+header .logo {
+    font-size: 20px;
+    font-weight: 600;
 }
 
-nav a {
-  font-size: 15px;
-  font-weight: 500;
-  color: #333;
-  transition: color 0.2s ease;
+/* Navigation links */
+header nav a {
+    margin: 0 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: opacity 0.25s ease;
 }
 
-nav a:hover {
-  color: #007bff;
+header nav a:hover {
+    opacity: 0.6;
 }
 
+/* Mobile menu button */
 #nav-toggle {
-  display: none;
-  font-size: 26px;
-  background: none;
-  border: none;
-  cursor: pointer;
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
 }
+
+/* MOBILE MENU: slide-in from right */
+
+#nav-close {
+  display: none; /* hide by default on desktop */
+}
+
+@media (max-width: 770px) {
+  #nav-close {
+    display: block; /* show only on mobile */
+    align-self: flex-end;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    margin-bottom: 24px;
+    transition: color 0.2s ease;
+  }
+
+  #nav-close:hover {
+    color: #007bff;
+  }
+}
+
+
+@media (max-width: 770px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 40px 24px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: saturate(180%) blur(10px);
+    position: fixed;
+    top: 0;
+    right: -100%; /* hidden by default */
+    height: 100vh;
+    width: 66.66%; /* 2/3 screen */
+    max-width: 400px; /* optional max width */
+    box-shadow: -4px 0 24px rgba(0,0,0,0.1);
+    border-radius: 12px 0 0 12px;
+    transition: right 0.3s ease;
+    z-index: 2000;
+  }
+
+  nav.open {
+    right: 0; /* slide in */
+  }
+
+  #nav-toggle {
+    display: block;
+  }
+}
+
+
 
 /* ABOUT SECTION */
 .about-section {
-    padding: 60px 20px;
+    padding: 140px 20px 64px; 
+    /* top = 140px (avoids overlap)
+       bottom = 120px (more breathing room)
+       sides = 20px 
+    */
 }
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 120px 0px 32px; /* slightly reduced for mobile */
+    }
+}
+.about-text h2 {
+    font-size: 48px; /* or 44px, adjust to taste */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #333;
+}
+.about-text .large-text {
+    font-size: 20px; /* slightly bigger for hero feel */
+    line-height: 1.6;
+    color: #444;
+}
+
 
 .about-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1000px;
+    max-width: 1440px;
     margin: auto;
     gap: 40px;
-    flex-wrap: wrap; /* Makes it responsive */
+    flex-wrap: wrap;
+    padding: 0 24px; /* MATCH HEADER PADDING */
 }
 
+.about-section {
+    padding-top: 120px; /* adjust to taste */
+    padding-bottom: 80px;
+}
+
+
 .about-text {
-    flex: 1 1 500px;
+    flex: 1 1 900px;
 }
 
 .about-image {
-    flex: 1 1 400px;
+    flex: 1 1 300px;
     text-align: center;
 }
 
 .about-image img {
     max-width: 100%;
-    height: auto;
+    max-height: auto;
+    object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 4px 18px rgba(0,0,0,0.08);
 }
@@ -111,7 +210,7 @@ nav a:hover {
 .hero-btn {
     display: inline-block;
     padding: 12px 28px;
-    background-color: #215D6E;
+    background-color: #4b4afc;
     color: #fff;
     border-radius: 6px;
     text-decoration: none;
@@ -120,7 +219,7 @@ nav a:hover {
     margin-top: 20px; /* space below text */
 }
 .hero-btn:hover {
-    background-color: #1a4d54;
+    background-color: #3b3bdb;
     transform: translateY(-2px);
 }
 
@@ -128,8 +227,8 @@ nav a:hover {
 
 /* SECTIONS */
 .section {
-  padding: 80px 20px;
-  max-width: 1000px;
+  padding: 48px 32px;
+  max-width: 1440px;
   margin: auto;
 }
 .section h2 {
@@ -143,32 +242,10 @@ nav a:hover {
   line-height: 1.7;
 }
 
-/* SKILLS */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 16px;
-  list-style: none;
-}
-
-.skills-grid li {
-  background: #f9f9f9;
-  border: 1px solid #eee;
-  padding: 14px;
-  text-align: center;
-  border-radius: 8px;
-  font-weight: 500;
-  color: #333;
-  transition: background 0.2s ease;
-}
-.skills-grid li:hover {
-  background: #fff;
-}
-
 /* PROJECTS */
 .projects-grid {
     display: grid;
-    gap: 24px;
+    gap: 48px;
     grid-template-columns: repeat(2, 1fr); /* exactly 2 columns on desktop */
 }
 
@@ -176,6 +253,7 @@ nav a:hover {
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 32px;
     }
 }
 
@@ -196,7 +274,7 @@ nav a:hover {
 
 .project-card .project-image {
     width: 100%;
-    aspect-ratio: 4 / 3; /* width:height = 4:3 */
+    aspect-ratio: 16 / 9; /* width:height = 10:9 */
     object-fit: cover;   /* ensures image fills the box without stretching */
     display: block;
     border-top-left-radius: 12px;
@@ -219,50 +297,91 @@ nav a:hover {
     line-height: 1.5;
 }
 
-/* EXPERIENCE LIST */
-.experience-list {
-  list-style: none;
-  padding-left: 0;
-}
-.experience-list li {
-  margin-bottom: 14px;
-  font-size: 17px;
-  color: #333;
+/* EXPERIENCE SECTION */
+.experience-item {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
-/* CONTACT SECTION */
-.contact {
-  text-align: center;
-  padding-bottom: 100px;
+.experience-item:last-child {
+  border-bottom: none;
 }
-.contact p a {
-  color: #007bff;
+
+.job-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.job-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.company {
   font-weight: 500;
 }
 
-/* RESPONSIVE / MOBILE MENU */
-@media (max-width: 770px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    gap: 16px;
-    padding: 20px;
-    background: white;
-    position: absolute;
-    top: 64px;
-    right: 32px;
-    width: 200px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
-    border-radius: 8px;
-  }
-  nav.open {
-    display: flex;
-  }
-  #nav-toggle {
-    display: block;
-  }
+.year {
+  font-style: italic;
+  opacity: 0.8;
 }
 
+.job-location {
+  font-size: 15px;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+
+/* FOOTER */
+.site-footer {
+    background: #fbfbfb;
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding: 40px 32px;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1440px;
+    margin: auto;
+}
+
+.footer-container p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-socials a {
+    font-weight: 500;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: #215D6E;
+    text-decoration: underline;
+}
+
+
+
+
+/* --------------------- PROJECT DETAIL PAGE STYLES --------------------- */
 /* HERO PROJECT IMAGE */
 .hero-image {
     width: 100%;
