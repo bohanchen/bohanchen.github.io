@@ -156,7 +156,7 @@ header nav a:hover {
 /* ---------------------------------- */
 /* BUTTONS */
 /* ---------------------------------- */
-.hero-btn {
+.primary-btn {
     display: inline-block;
     padding: 12px 28px;
     background-color: var(--color-primary);
@@ -168,7 +168,7 @@ header nav a:hover {
     margin-top: var(--spacing-md);
 }
 
-.hero-btn:hover {
+.primary-btn:hover {
     background-color: var(--color-primary-dark);
     transform: translateY(-2px);
 }
@@ -178,7 +178,7 @@ header nav a:hover {
 /* ---------------------------------- */
 .about-section {
     padding: 120px var(--spacing-lg) 80px;
-    background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(250,250,255,1));
+    background: linear-gradient(to bottom, #c4c4fa, #ffffff);
     text-align: left;
 }
 
@@ -228,6 +228,9 @@ header nav a:hover {
     .about-text .large-text {
         font-size: 16px;
     }
+    .about-container {
+        padding: 0 ;
+    }
 }
 
 /* ---------------------------------- */
@@ -269,8 +272,9 @@ header nav a:hover {
 
 .project-card {
     background: var(--color-bg);
-    border-radius: 12px;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    border-radius: 24px;
+    /* box-shadow: 0 4px 18px rgba(0,0,0,0.06); */
+    border: #d8d8d8 1px solid;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -279,15 +283,15 @@ header nav a:hover {
 
 .project-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.05);
 }
 
 .project-card img {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
 }
 
 .project-card .project-content {
@@ -389,60 +393,111 @@ header nav a:hover {
     text-decoration: underline;
 }
 
-/* ---------------------------------- */
-/* PROJECT DETAIL PAGE STYLES */
-/* ---------------------------------- */
-.hero-image {
+/* -------------------------
+   PROJECT DETAIL PAGE
+-------------------------- */
+
+/* HERO IMAGE WRAPPER */
+.project-hero-wrapper {
     width: 100%;
-    aspect-ratio: 16 / 6;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-top: 120px; /* account for fixed header */
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.project-hero-image {
+    width: 100%;
+    border-radius: 16px;
     object-fit: cover;
     display: block;
+    aspect-ratio: 16 / 7; /* slightly cinematic */
+    /* box-shadow: 0 4px 20px rgba(0,0,0,0.06); */
 }
 
+
+/* MAIN PROJECT CONTENT WRAPPER */
+.project-content-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.project-content {
+    width: 100%;
+    max-width: 1000px;
+}
+
+
+/* TITLES */
 .project-title h1 {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 800;
     margin-bottom: 12px;
-}
-
-.project-title h2 {
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--color-text-secondary);
-}
-
-.project-bullets ul {
-    list-style-type: disc;
-    margin-left: var(--spacing-md);
-}
-
-.project-chart table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: var(--spacing-sm);
-}
-
-.project-chart th,
-.project-chart td {
-    border: 1px solid #ddd;
-    padding: 12px;
+    color: #111;
     text-align: center;
 }
 
-.project-chart th {
-    background-color: #f4f4f4;
-    font-weight: 600;
+.project-title p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 32px;
+    text-align: center;
 }
 
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-sm);
+/* SECTIONS */
+.project-content section {
+    margin-bottom: 48px;
 }
 
-.image-grid img {
-    width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
+.project-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #111;
+}
+
+.project-content p {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.7;
+}
+
+
+/* -------------------------
+   MOBILE RESPONSIVE
+-------------------------- */
+@media (max-width: 768px) {
+
+    .project-hero-wrapper {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 100px;
+    }
+
+    .project-content-wrapper {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .project-title h1 {
+        font-size: 30px;
+    }
+
+    .project-title h2 {
+        font-size: 18px;
+    }
+
+    .project-content h2 {
+        font-size: 22px;
+    }
+
+    .project-content p,
+    .project-bullets li {
+        font-size: 16px;
+    }
 }

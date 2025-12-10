@@ -5,94 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Enterprise Workflow Redesign — Bohan Chen</title>
   <link rel="stylesheet" href="../CSS/styles.css" />
-  <!-- Google Fonts: Work Sans -->
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 </head>
+
 <body>
 
   <!-- HEADER -->
-  <header>
+   <header>
       <div class="header-container">
         <div class="logo">Bohan Chen</div>
 
         <nav id="nav-menu">
-          <a href="../index.html">About</a>
+            <button id="nav-close" aria-label="Close menu">×</button>
+          <a href="../index.html">Home</a>
         </nav>
 
         <button id="nav-toggle">☰</button>
       </div>
     </header>
 
-  <!-- HERO IMAGE -->
-  <section class=" hero-project">
-    <img src="https://images.unsplash.com/photo-1500964757637-c85e8a162699?q=80&w=1803&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Enterprise Workflow Redesign" class="hero-image" />
+  <!-- HERO IMAGE WRAPPER -->
+  <section class="project-hero-wrapper">
+    <img 
+      src="https://images.unsplash.com/photo-1500964757637-c85e8a162699?q=80&w=1803&auto=format&fit=crop&ixlib=rb-4.1.0"
+      alt="Enterprise Workflow Redesign"
+      class="project-hero-image"
+    />
   </section>
 
-  <!-- PROJECT TITLE AND SUBTITLE -->
-  <section class="section project-title">
-    <h1>Enterprise Workflow Redesign</h1>
-    <h2>Optimizing Enterprise Task Management for Efficiency and Usability</h2>
-  </section>
+  <!-- PROJECT CONTENT CONTAINER -->
+  <section class="project-content-wrapper">
 
-  <!-- BODY DESCRIPTION -->
-  <section id="overview" class="section project-overview">
-    <h2>Project Overview</h2>
-    <p>This project focused on streamlining complex enterprise workflows to reduce task time and improve user experience. The goal was to make enterprise software intuitive for new and experienced users alike.</p>
-  </section>
-
-  <!-- BULLET POINTS -->
-  <section class="section project-bullets">
-    <h2>Key Contributions</h2>
-    <ul>
-      <li>Conducted user research with 50+ enterprise users</li>
-      <li>Redesigned the task management dashboard</li>
-      <li>Created high-fidelity interactive prototypes</li>
-      <li>Developed a reusable component library for scalability</li>
-    </ul>
-  </section>
-
-  <!-- COMPARISON CHART -->
-  <section class="section project-chart">
-    <h2>Before vs After Comparison</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Metric</th>
-          <th>Before</th>
-          <th>After</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Task Completion Time</td>
-          <td>15 min</td>
-          <td>8 min</td>
-        </tr>
-        <tr>
-          <td>Error Rate</td>
-          <td>12%</td>
-          <td>4%</td>
-        </tr>
-        <tr>
-          <td>User Satisfaction</td>
-          <td>68%</td>
-          <td>92%</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- IMAGE GRID -->
-  <section id="images" class="section project-images">
-    <h2>Project Screenshots</h2>
-    <div class="image-grid">
-      <img src="https://via.placeholder.com/600x400" alt="Screenshot 1" />
-      <img src="https://via.placeholder.com/600x400" alt="Screenshot 2" />
-      <img src="https://via.placeholder.com/600x400" alt="Screenshot 3" />
-      <img src="https://via.placeholder.com/600x400" alt="Screenshot 4" />
+    <div class="project-content">
+      <!-- OVERVIEW -->
+      <section id="overview" class="project-overview">
+        <h2>Project Overview</h2>
+        <p>
+          This project focused on streamlining complex enterprise workflows to reduce task time 
+          and improve user experience. The goal was to make enterprise software intuitive for 
+          new and experienced users alike.
+        </p>
+        <!-- ⭐ FIGMA BUTTON -->
+      <a href="https://www.figma.com/your-presentation-link" 
+        class="primary-btn" 
+        target="_blank">
+        View Figma Presentation →
+      </a>
+      </section>
     </div>
   </section>
+
+  <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p>&copy; 2025 Bohan Chen. All rights reserved.</p>
+        <div class="footer-socials">
+          <a
+            href="https://www.linkedin.com/in/yourprofile"
+            target="_blank"
+            aria-label="LinkedIn"
+            >LinkedIn</a
+          >
+          <a
+            href="https://www.behance.net/yourprofile"
+            target="_blank"
+            aria-label="Behance"
+            >Behance</a
+          >
+          <a
+            href="https://dribbble.com/yourprofile"
+            target="_blank"
+            aria-label="Dribbble"
+            >Dribbble</a
+          >
+          <a href="mailto:youremail@example.com" aria-label="Email">Email</a>
+        </div>
+      </div>
+    </footer>
 
   <script src="../JS/main.js"></script>
 </body>
