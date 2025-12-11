@@ -492,6 +492,10 @@ header nav a:hover {
         font-size: 18px;
     }
 
+    .project-title p {
+        font-size: 18px;
+    }
+
     .project-content h2 {
         font-size: 22px;
     }
